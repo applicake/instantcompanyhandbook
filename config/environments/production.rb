@@ -50,4 +50,7 @@ CorporateHandbook::Application.configure do
   # Required by devise, setting the mailer's host
   # commented out as we're not intending to send any mails!
   # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # path to ImageMagick, for paperclip
+  Paperclip.options[:command_path] = '/usr/bin/'
 end

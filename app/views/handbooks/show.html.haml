@@ -1,7 +1,3 @@
 %p
-  %b Name:
-  = @handbook.name
-
-= link_to 'Edit', edit_handbook_path(@handbook)
-\|
-= link_to 'Back', handbooks_path
+  %b View your handbook here: 
+  = link_to('handbook', params.merge(:format => :pdf) )

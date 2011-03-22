@@ -1,4 +1,6 @@
 CorporateHandbook::Application.routes.draw do
+  devise_for :users
+
   resources :handbooks
 
   root :to => "handbooks#new"

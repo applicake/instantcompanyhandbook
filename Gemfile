@@ -47,3 +47,5 @@ gem "prawnto"
 
 # paperclip, for attachments
 gem "paperclip"
+
+gem "devise" # authentication

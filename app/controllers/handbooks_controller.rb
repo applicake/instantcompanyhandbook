@@ -1,4 +1,8 @@
 class HandbooksController < ApplicationController
+  
+  before_filter :authenticate_user!, :except => [:show, :new, :create]
+  
+
   # GET /handbooks
   # GET /handbooks.xml
   def index
@@ -16,6 +20,7 @@ class HandbooksController < ApplicationController
     @handbook = Handbook.find(params[:id])
 
     respond_to do |format|
+      format.pdf # show.pdf.prawn
       format.html # show.html.erb
       format.xml  { render :xml => @handbook }
     end

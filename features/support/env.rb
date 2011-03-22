@@ -51,5 +51,6 @@ Dir[File.expand_path(File.join(File.dirname(__FILE__),'..','..','spec','factorie
 
 # Remove this line if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
+require 'database_cleaner'
 DatabaseCleaner.strategy = :transaction
 

@@ -49,3 +49,9 @@ gem "prawnto"
 gem "paperclip"
 
 gem "devise" # authentication
+
+group :test do
+  gem 'database_cleaner' # ./features/support/env.rb uses it
+end
+
+gem 'ruby-debug'

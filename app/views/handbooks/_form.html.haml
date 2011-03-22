@@ -1,0 +1,16 @@
+= form_for @handbook do |f|
+  -if @handbook.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@handbook.errors.count, "error")} prohibited this handbook from being saved:"
+      %ul
+        - @handbook.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :logo
+    = f.file_field :logo
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,19 @@
+%h1 Listing handbooks
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @handbooks.each do |handbook|
+    %tr
+      %td= handbook.name
+      %td= link_to 'Show', handbook
+      %td= link_to 'Edit', edit_handbook_path(handbook)
+      %td= link_to 'Destroy', handbook, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Handbook', new_handbook_path

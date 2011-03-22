@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @handbook.name
+
+= link_to 'Edit', edit_handbook_path(@handbook)
+\|
+= link_to 'Back', handbooks_path

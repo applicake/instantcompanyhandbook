@@ -1,0 +1,2 @@
+module HandbooksHelper
+end

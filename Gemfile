@@ -28,7 +28,8 @@ gem 'rails', '3.0.5'
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "sqlite3-ruby", :require => "sqlite3"
+
+gem "mysql"
 gem "rspec-rails", ">= 2.4.1", :group => [:development]
 gem "remarkable_activerecord", ">=4.0.0.alpha4", :group => :test
 gem "factory_girl_rails", "1.1.beta1", :group => :test
@@ -39,3 +40,10 @@ gem "compass"
 gem "capybara", "0.4.0", :group => :test
 gem "cucumber-rails", :group => :test
 gem "launchy", :group => :test
+
+# prawn and prawnto - for generating .pdf
+gem "prawn"
+gem "prawnto"
+
+# paperclip, for attachments
+gem "paperclip"

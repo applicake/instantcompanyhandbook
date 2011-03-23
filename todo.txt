@@ -1,0 +1,3 @@
+1. pdf-y sa generowane z sekwencyjnymi id, ktos moglby przegladac po kolei wszystkie pdf-y; nalezy wprowadzic dodatkowa zmienna do nazwy pdf-a (np. timestamp? moze niekoniecznie; zalecany guid, via uuid generator) Tue Mar 22 17:00:54 CET 2011
+2. konieczne stworzenie przerywnika - na generowanie pdf-a (bo generowanie pdf-a zajmuje duzo czasu); pdf ma byc generowany w background job, po wygenerowaniu ajaxowo informacja do przegladarki
+3. nalezy wziac dodatkowa poprawke czasowa na instalowanie na serwerze; na serwer trzeba wrzucic apilkacje ruby, oraz program imagemagick do skalowania zdjec (potrzebny do skalowania logo)

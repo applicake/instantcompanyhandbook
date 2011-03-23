@@ -12,3 +12,4 @@ public/system/*
 tmp/restart.txt
 coverage/
 *.swp
+public/handbooks/*

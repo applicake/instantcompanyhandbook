@@ -1,3 +1,3 @@
 %p
   %b View your handbook here: 
-  = link_to('handbook', params.merge(:format => :pdf) )
+  = link_to('handbook', "#{handbook_path(@handbook)}/corporate_handbook.pdf" )

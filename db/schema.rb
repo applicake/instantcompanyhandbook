@@ -12,7 +12,8 @@
 
 ActiveRecord::Schema.define(:version => 20110322103535) do
 
-  create_table "handbooks", :force => true do |t|
+  create_table "handbooks", :id => false, :force => true do |t|
+    t.string   "id",                :limit => 36
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

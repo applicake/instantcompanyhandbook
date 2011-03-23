@@ -54,4 +54,6 @@ group :test do
   gem 'database_cleaner' # ./features/support/env.rb uses it
 end
 
-gem 'ruby-debug'
+gem 'ruby-debug' # for the debugger command
+
+gem 'uuidtools' # for generating uuids, see https://github.com/aduffeck/uuid_it

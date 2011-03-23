@@ -19,26 +19,6 @@ class HandbooksController < ApplicationController
   def show
     @handbook = Handbook.find(params[:id])
 
-    # generating pdf file through prawn
-
-
-    pdf = Prawn::Document.new(
-      :page_size => 'A4',
-      :page_layout => :landscape,
-      :left_margin => 0, 
-      :right_margin => 0,
-      :top_margin => 0,
-      :bottom_margin => 0
-    )
-
-    pdf.text "#{@handbook.name}"
-    Photo.all.sort_by {|p| p.order} .each do |photo|
-      pdf.start_new_page
-      pdf.image "#{photo.data.path}", :at => [0, 595], :width => 841, :height => 595 
-    end
-
-    pdf.render_file "./public/handbooks/#{@handbook.id}.pdf"
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @handbook }

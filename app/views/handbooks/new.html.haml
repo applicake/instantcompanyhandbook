@@ -1,6 +1,22 @@
 %h2.handwriting Dearest Valued Employee
-%p
-  Enjoy your stay at Corporate Handbook, a place where you shall understand all the rules of your workspace. 
-%h2 New handbook
 
-= render 'form'
+%h2 What's this page about?
+.instructions
+  .description
+    Enjoy your stay at Corporate Handbook, a place where you shall understand all the rules of your workspace. From Wikipedia:
+    .quote "Handbook is a type of reference work, or other collection of instructions, that is intended to provide ready reference."
+    Its corporate variant contains helpful tips on 
+    %strong how to live in accordance with your company's policy
+    \. All this knowledge is within the grasp of your hand!
+  .image-guidelines
+    =image_tag("handbook_image_noshadow.png")
+
+.handbooks-panel
+  .sample-handbook
+    %h2 View Sample
+    test
+
+  .your-handbook
+    %h2 Generate your own!
+
+    = render 'form'

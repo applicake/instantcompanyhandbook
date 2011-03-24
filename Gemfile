@@ -29,7 +29,8 @@ gem 'rails', '3.0.5'
 #   gem 'webrat'
 # end
 
-gem "mysql"
+# gem "mysql"
+gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "rspec-rails", ">= 2.4.1", :group => [:development]
 gem "remarkable_activerecord", ">=4.0.0.alpha4", :group => :test
 gem "factory_girl_rails", "1.1.beta1", :group => :test

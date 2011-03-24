@@ -1,19 +1,20 @@
-= form_for @handbook, :html => { :multipart => true }  do |f|
-  -if @handbook.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@handbook.errors.count, "error")} prohibited this handbook from being saved:"
-      %ul
-        - @handbook.errors.full_messages.each do |msg|
-          %li= msg
+.form
+  = form_for @handbook, :html => { :multipart => true }  do |f|
+    -if @handbook.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@handbook.errors.count, "error")} prohibited this handbook from being saved:"
+        %ul
+          - @handbook.errors.full_messages.each do |msg|
+            %li= msg
 
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :company_name, :for => 'handbook_name'
-    = f.text_field :name
-  .field
-    = f.label :logo
-    = f.file_field :logo
-  .actions
-    = f.submit 'Save'
+    .field
+      = f.label :email
+      = f.text_field :email
+    .field
+      = f.label :company_name, :for => 'handbook_name'
+      = f.text_field :name
+    .field
+      = f.label :logo
+      = f.file_field :logo
+    .actions
+      = f.submit 'Save'

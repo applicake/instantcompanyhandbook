@@ -30,6 +30,8 @@
 @include font-face("Cursif", font-files("Cursif.ttf", truetype))
 
 
+$main_background: #f4f3ea
+
 .user-panel
   text-align: right
   +column(24, last)
@@ -37,41 +39,82 @@
 .alerts
   +column(22, last)
 
-.container
-  +box-shadow(#888, 0px, 2px, 10px)
-  +prepend-top(40px)
-  +append-bottom(40px)
+body
+  background: $main_background
 
-.wrapper
-  +append-bottom(20px)
-  padding-top: 40px
-  +column(22,last)
-  +append(1)
-  +prepend(1)
-  border-top: 1px solid #aaa
+h1, h2, h3, h4, h5, h6
+  font-family: "Goudy Bookletter", sans 
+
+
+.container
+  overflow: visible
 
 .header-wrapper
   +prepend-top(10px)
+  +column(24,last)
+
+.header
+  +column(24,last)
+  +text-shadow( #fff, 0, 1px, 0px)
+  text-align: right
+  h1
+    color: darken(desaturate($main_background, 25), 40)
+
+.wrapper
+  background: #fff
+  +append-bottom(20px)
+  +box-shadow( #aaa, 0px, 2px, 10px, 0px)
+  padding-top: 40px
+  padding-bottom: 40px
+  margin-bottom: 80px
   +column(22,last)
   +append(1)
   +prepend(1)
-  +linear-gradient(color-stops(white, #ddd))
-  border-bottom: 1px solid #ccc
-
-.header
-  +column(22,last)
-  font-size: 1.4em
-  +text-shadow(#fff, 0, 1px, 0)
-  text-align: right
-  h1
-    margin-bottom: 10px
 
 .handwriting
   font-family: "League Script", sans 
-  font-size: 42px
+  font-size: 36px
   +text-shadow(#fff, 0, 1px, 0)
+
+.instructions
+  +column(22, last)
+  +append-bottom(30px)
+  .description
+    +column(10, last)
+    +append(1)
+    text-align: justify
+    .quote
+      font-style: italic
+      padding: 10px
+  .image-guidelines
+    +column(11, last)
+    img
+      display: block
+      margin: 0 auto
+      margin-top: -90px
+
+
+.handbooks-panel
+  +column(22, last)
+  .sample-handbook
+    +column(11)
+  .your-handbook
+    +column(11, last)
+    .form
+      +column(11, last)
+      .field
+        +column(11, last)
+        label
+          +column(11, last)
+        input
+          +column(11, last)
+      .actions
+        +column(11, last)
+        padding-top: 10px
+
 
 
 // useful lines
+//+linear-gradient(color-stops(white, #ddd))
 //+border-radius(10px, 50px)
 // font-family: "Quattrocento"

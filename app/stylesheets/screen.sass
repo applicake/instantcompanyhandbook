@@ -15,9 +15,63 @@
 
 @include blueprint-scaffolding
 
+@import "compass/css3/box-shadow"
+@import "compass/css3/border-radius"
+@import "compass/css3/font-face"
+@import "compass/css3/text-shadow"
+@import "compass/css3/gradient"
+
+@include font-face("Goudy Bookletter", font-files("GoudyBookletter1911.otf", opentype))
+@include font-face("Prociono", font-files("ProcionoTT.ttf", truetype, "Prociono.otf", opentype))
+@include font-face("Raleway", font-files("raleway_thin.ttf", truetype, "raleway_thin.otf", opentype))
+@include font-face("Chunk", font-files("Chunk.ttf", truetype, "Chunk.otf", opentype))
+@include font-face("League Gothic", font-files("League Gothic.otf", opentype))
+@include font-face("League Script", font-files("LeagueScript.otf", opentype))
+@include font-face("Cursif", font-files("Cursif.ttf", truetype))
+
+
 .user-panel
   text-align: right
   +column(24, last)
 
 .alerts
-  +column(24, last)
+  +column(22, last)
+
+.container
+  +box-shadow(#888, 0px, 2px, 10px)
+  +prepend-top(40px)
+  +append-bottom(40px)
+
+.wrapper
+  +append-bottom(20px)
+  padding-top: 40px
+  +column(22,last)
+  +append(1)
+  +prepend(1)
+  border-top: 1px solid #aaa
+
+.header-wrapper
+  +prepend-top(10px)
+  +column(22,last)
+  +append(1)
+  +prepend(1)
+  +linear-gradient(color-stops(white, #ddd))
+  border-bottom: 1px solid #ccc
+
+.header
+  +column(22,last)
+  font-size: 1.4em
+  +text-shadow(#fff, 0, 1px, 0)
+  text-align: right
+  h1
+    margin-bottom: 10px
+
+.handwriting
+  font-family: "League Script", sans 
+  font-size: 42px
+  +text-shadow(#fff, 0, 1px, 0)
+
+
+// useful lines
+//+border-radius(10px, 50px)
+// font-family: "Quattrocento"

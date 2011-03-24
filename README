@@ -1,0 +1,4 @@
+SOME IMPORTANT THINGS
+
+1. This project uses Paperclip with scaling and this has some requirements. Namely: A. ImageMagick has to be installed on server B. Paperclip must know the ImageMagick's path, to be set at the environment script (./config/environments)
+2. prawn is used for creating pdfs. Some background things affect the time of pdf generation: A. Prawn should not resize images, it should get them resized from Paperclip. B. Images should not have an alpha channel.

@@ -12,8 +12,11 @@
       = javascript_include_tag 'html5'
   %body
     .container
-      %h1 Corporate Handbook
-      - user_panel
-      - alerts
-      = yield
+      .header-wrapper
+        .header
+          %h1 Corporate Handbook
+      .wrapper
+        - user_panel
+        - alerts
+        = yield
     = javascript_include_tag :defaults

@@ -2,7 +2,11 @@ CorporateHandbook::Application.routes.draw do
   resources :photos
 
 
-  resources :handbooks
+  resources :handbooks do
+    collection do
+      get 'sample'
+    end
+  end
 
   root :to => "handbooks#new"
 

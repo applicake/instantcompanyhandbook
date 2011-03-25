@@ -12,4 +12,31 @@ module LayoutHelper
       end if alert
     end if alert || notice
   end
+
+  def applicake_menu
+    applicake_base_url = 'http://applicake.com/'
+    haml_tag :ul do
+      # array of pairs: menu text, url address; if
+      # the url is the same as the menu text, it can
+      # be ommitted
+      [ ['home', ''],
+        'blog',
+        'services',
+        'team',
+        'projects',
+        ['our way', 'appliway'],
+        'jobs',
+        'contact'
+      ].each do |entity|
+        haml_tag :li do
+          if entity.is_a? Array
+            haml_concat link_to(entity.first, "#{applicake_base_url}#{entity.second}")
+          else
+            haml_concat link_to(entity, "#{applicake_base_url}#{entity}")
+          end
+        end
+      end
+    end
+  end
+
 end

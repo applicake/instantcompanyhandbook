@@ -1,6 +1,6 @@
 class HandbooksController < ApplicationController
   
-  before_filter :authenticate_user!, :except => [:show, :new, :create]
+  before_filter :authenticate_user!, :except => [:show, :new, :create, :sample]
   
 
   # GET /handbooks
@@ -22,6 +22,14 @@ class HandbooksController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @handbook }
+    end
+  end
+
+  def sample
+    @photos = Photo.all.sort_by { |p| p.order }
+
+    respond_to do |format|
+      format.html
     end
   end
 
@@ -48,7 +56,7 @@ class HandbooksController < ApplicationController
 
     respond_to do |format|
       if @handbook.save
-        format.html { redirect_to(@handbook, :notice => 'Handbook was successfully created.') }
+        format.html { redirect_to(@handbook, :notice => 'Your request has been saved.') }
         format.xml  { render :xml => @handbook, :status => :created, :location => @handbook }
       else
         format.html { render :action => "new" }

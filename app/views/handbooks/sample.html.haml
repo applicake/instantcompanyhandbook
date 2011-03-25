@@ -1,0 +1,7 @@
+%h2 Brace yourself
+
+.photos
+  -@photos.each do |photo|
+    .photo
+      =image_tag photo.data(:large)
+

@@ -21,6 +21,10 @@
 @import "compass/css3/text-shadow"
 @import "compass/css3/gradient"
 
+@import "compass/layout/sticky-footer"
+
+@import "fancy-buttons"
+
 @include font-face("Goudy Bookletter", font-files("GoudyBookletter1911.otf", opentype))
 @include font-face("Prociono", font-files("ProcionoTT.ttf", truetype, "Prociono.otf", opentype))
 @include font-face("Raleway", font-files("raleway_thin.ttf", truetype, "raleway_thin.otf", opentype))
@@ -34,7 +38,8 @@ $main_background: #f4f3ea
 
 .user-panel
   text-align: right
-  +column(24, last)
+  +column(22, last)
+  +append-bottom(20px)
 
 .alerts
   +column(22, last)
@@ -62,57 +67,114 @@ h1, h2, h3, h4, h5, h6
 
 .wrapper
   background: #fff
+  padding-top: 40px
   +append-bottom(20px)
   +box-shadow( #aaa, 0px, 2px, 10px, 0px)
-  padding-top: 40px
   padding-bottom: 40px
-  margin-bottom: 80px
+  // margin-bottom: 80px
   +column(22,last)
   +append(1)
   +prepend(1)
 
-.handwriting
-  font-family: "League Script", sans 
-  font-size: 36px
-  +text-shadow(#fff, 0, 1px, 0)
-
-.instructions
+.content-header
+  //+pull(1)
+  //+column(24, last)
+  margin-top: -15px
   +column(22, last)
-  +append-bottom(30px)
-  .description
-    +column(10, last)
-    +append(1)
-    text-align: justify
-    .quote
-      font-style: italic
-      padding: 10px
-  .image-guidelines
-    +column(11, last)
-    img
-      display: block
-      margin: 0 auto
-      margin-top: -90px
+  //+linear-gradient(color-stops(white,#f0f0f0), bottom)
+  .handwriting
+    font-family: "League Script", sans 
+    font-size: 36px
+    text-align: center
+    +text-shadow(#fff, 0, 1px, 0)
+    margin-bottom: 17px
 
+.description
+  +column(10, last)
+  +append(1)
+  text-align: justify
+  .quote
+    font-style: italic
+    padding: 10px
+  .doc-icon
+    margin-top: 30px
+    text-align: center
+    +column(10, last)
+  .doc-description
+    text-align: center
+    +column(10, last)
 
 .handbooks-panel
-  +column(22, last)
-  .sample-handbook
-    +column(11)
+  +column(11, last)
   .your-handbook
-    +column(11, last)
+    +column(10, last)
+    +prepend(1)
     .form
-      +column(11, last)
+      +column(10, last)
       .field
-        +column(11, last)
+        +column(10, last)
         label
-          +column(11, last)
         input
-          +column(11, last)
+          +column(10, last)
+      .field_with_errors
+        +column(10, last)
+        label
+        input
+          border: 1px solid #900
+          background: #fee
+          +column(10, last)
       .actions
-        +column(11, last)
-        padding-top: 10px
+        +column(10, last)
+        padding-top: 20px
+        .generate
+          +fancy-button(#A1C820)
+      #error_explanation
+        margin: 18px 0
+        +column(10,last)
+        ul
+          margin: 0
 
 
+.email
+  font-size: large
+  color: #666
+  font-weight: bold
+
+
+@include sticky-footer(95px, "#container", "#container_footer", "#footer")
+
+#footer
+  // background: #8ED121
+  // background: url("http://assets.applicake.com.s3.amazonaws.com/images/menu.bg3.jpg") bottom repeat-x
+  background: #f00
+  background: url("./../../images/menu_bg_4.png") bottom repeat-x
+  height: 95px
+  .top-logo
+    +column(7)
+    margin-top: 18px
+    margin-left: 20px
+  .menu-items
+    +column(16, last)
+    ul 
+      margin-top: 61px
+      margin-left: 20px
+      li
+        float: left
+        display: block
+        margin-left: 20px
+        padding: 0
+        a
+          font-family: Helvetica, Arial, sans-serif
+          padding: 0
+          display: block
+          height: 32px
+          text-align:center
+          font-size: 11pt
+          color: #666
+          font-weight: bold
+          text-decoration: none
+        a:hover
+          color: #fff
 
 // useful lines
 //+linear-gradient(color-stops(white, #ddd))

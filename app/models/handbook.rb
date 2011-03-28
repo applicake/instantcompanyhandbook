@@ -15,10 +15,16 @@ class Handbook < ActiveRecord::Base
     self.id = UUIDTools::UUID.timestamp_create().to_s
   end
 
+  # Creating pdf through prawn
+  # via a background job using spawn.
+  # (Let's hope it's okay;
+  # if done other way,
+  # it might bring the whole server down)
+  #
+  # https://github.com/tra/spawn
   def generate_pdf
-    # generating pdf file through prawn
-    # via a background job using spawn
-    # https://github.com/tra/spawn
+    # about 'nice': http://en.wikipedia.org/wiki/Nice_(Unix)
+    # argv is for naming a process (e.g. for ps aux)
     spawn :nice => 5, :argv => "spawn #{id}" do
 
       pdf = Prawn::Document.new(

@@ -11,9 +11,10 @@
       = f.label :logo
       (optional)
       = f.file_field :logo
-    .field.captcha
-      =f.label "Please proove you're human", :for => 'recaptcha_response_field'
-      =recaptcha_tags
+    - if requires_captcha? request.remote_ip
+      .field.captcha
+        =f.label "Please prove you're human", :for => 'recaptcha_response_field'
+        =recaptcha_tags
 
     -if @handbook.errors.any?
       .error#error_explanation

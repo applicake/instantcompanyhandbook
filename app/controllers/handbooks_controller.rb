@@ -1,4 +1,6 @@
 class HandbooksController < ApplicationController
+  include HandbooksHelper
+  
   
   before_filter :authenticate_user!, :except => [:show, :new, :create, :sample]
   
@@ -58,8 +60,8 @@ class HandbooksController < ApplicationController
     @handbook.ip_address = ip_address
 
     respond_to do |format|
-      if @handbook.save
-        format.html { redirect_to(@handbook, :notice => 'Your request has been saved.') }
+      if (captcha_unnecessary?(ip_address) || verify_recaptcha(:model => @handbook, :message => "Invalid captcha")) && @handbook.save
+        format.html { redirect_to(@handbook, :notice => 'Mission completed!') }
         format.xml  { render :xml => @handbook, :status => :created, :location => @handbook }
       else
         format.html { render :action => "new" }
@@ -95,4 +97,5 @@ class HandbooksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end

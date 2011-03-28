@@ -1,19 +1,22 @@
 .content-header
-  %h2.handwriting Dearest Valued Employee
+  %h1.headline Hello and welcome... to the 100% free, open source <br/>corporate handbook generator for your startup!
 
 .description
   %h2 What's it all about?
-  Enjoy your stay at Corporate Handbook, a place where you shall understand all the rules of your workspace. From Wikipedia:
-  .quote "Handbook is a type of reference work, or other collection of instructions, that is intended to provide ready reference."
-  Its corporate variant contains helpful tips on 
-  %strong how to live in accordance with your company's policy
-  \. All this knowledge is now within the grasp of your hand.
+  %p We crated this page because we observed a dangerous lack of structure in the corporate world, particularly in the fragile environment of startup ecosystem.
+  %p Startups ignore necessary bureaucracy, their values are only vaguely defined and, henceforth, they are not successful in executing them.
+  %p We believe following a set rudimentary rules it necessary to overcome the forthcoming challenges, maintain efforts to deliver top performance, ensure peak performance of the workforce, generate passion, involvement and achievement. Finally, maintain motivation to design and deliver market-leading products and solutions.
+  And remember the meta-rule: "Fake it until you make it!" 
   .doc-icon
+    %h2 View a sample!
+    %p A life-saving book created for the Applicake Ruby on Rails development shop.
     = link_to image_tag('freelance_icon.png'), sample_handbooks_path
   .doc-description
     = link_to 'Show me the sample', sample_handbooks_path
 
 .handbooks-panel
   .your-handbook
-    %h2 Send me my corporate handbook
+    %h2 I want one:
+    %p Ready to boost up your performance and take your company culture to the next level?
+    %p Generate a personalized corporate handbook for your company here:
     = render 'form'

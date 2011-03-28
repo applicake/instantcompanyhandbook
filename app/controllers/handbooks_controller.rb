@@ -54,6 +54,9 @@ class HandbooksController < ApplicationController
   def create
     @handbook = Handbook.new(params[:handbook])
 
+    ip_address = request.remote_ip
+    @handbook.ip_address = ip_address
+
     respond_to do |format|
       if @handbook.save
         format.html { redirect_to(@handbook, :notice => 'Your request has been saved.') }

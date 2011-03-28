@@ -63,7 +63,11 @@ h1, h2, h3, h4, h5, h6
   +text-shadow( #fff, 0, 1px, 0px)
   text-align: right
   h1
-    color: darken(desaturate($main_background, 25), 40)
+    a
+      text-decoration: none
+      color: darken(desaturate($main_background, 25), 40)
+    a:hover
+      color: darken(desaturate($main_background, 15), 60)
 
 .wrapper
   background: #fff
@@ -79,7 +83,7 @@ h1, h2, h3, h4, h5, h6
 .content-header
   //+pull(1)
   //+column(24, last)
-  margin-top: -15px
+  margin-top: -10px
   +column(22, last)
   //+linear-gradient(color-stops(white,#f0f0f0), bottom)
   .handwriting
@@ -175,6 +179,14 @@ h1, h2, h3, h4, h5, h6
           text-decoration: none
         a:hover
           color: #fff
+
+.photo
+  padding: 20px
+  margin-bottom: 10px
+  width: 1000px
+  margin-left: -80px
+  background: #fff
+  +box-shadow( #aaa, 0px, 2px, 10px, 0px)
 
 // useful lines
 //+linear-gradient(color-stops(white, #ddd))

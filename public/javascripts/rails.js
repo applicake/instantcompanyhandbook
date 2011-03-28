@@ -125,6 +125,26 @@
 		}
 	});
 
+  $('input[data-extracts_cname_to]').live('keyup.rails', function(e){
+    var source = $(this);
+    var target = $('#'+source.attr('data-extracts_cname_to'));
+    var mail = source.val();
+    var capitalise = function(s) {
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+
+    if (mail.search('@')>0){
+      var domain = capitalise(mail.substr(mail.search('@')+1));
+      var cname = domain
+      if (domain.search(/\./)>0){
+        cname = domain.substr(0, domain.search(/\./));
+      }
+
+      target.val(cname);
+    }
+  });
+
+
 	$('form').live('submit.rails', function(e) {
 		var form = $(this), remote = form.data('remote') != undefined;
 		if (!allowAction(form)) return false;

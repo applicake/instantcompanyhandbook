@@ -1,9 +1,14 @@
 # taken from 
 # http://my.rails-royce.org/2010/07/21/email-validation-in-ruby-on-rails-without-regexp/ 
-# and modified a little (we don't want to send 'invalid email'
+# and modified a little; we don't want to send 'invalid email'
 # message to the user when the email is empty; this should be
 # caught by the presence validator and serviced with a more
-# proper message (e.g. email cannot be empty)
+# proper message (e.g. email cannot be empty); therefore, we're
+# assuming that empty string is a valid mail. That's also not perfect,
+# Todo: move this to upper level, eg. set that only one attribute 
+# validator may fire at a time, and presence validator has higher 
+# priority than email validator
+# Tl;dr: ToDo: rewrite
 
 require 'mail'
 class EmailValidator < ActiveModel::EachValidator

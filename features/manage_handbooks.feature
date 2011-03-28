@@ -5,6 +5,7 @@ Feature: Manage handbooks
   
   Scenario: Register new handbook
     Given I am on the homepage
-    And I fill in "Company Name" with "FlowerPower"
-    And I press "Generate"
-    Then I should see "Your handbook has been generated"
+    And I fill in "Your email" with "nbartlomiej@gmail.com"
+    And I fill in "Company name" with "Flower Power"
+    When I press "Send me the .pdf"
+    Then I should see "We'll write you!"

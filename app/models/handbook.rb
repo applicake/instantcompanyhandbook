@@ -28,8 +28,14 @@ class Handbook < ActiveRecord::Base
     pdf.bounding_box [50,633], :width => 900, :height => 533 do
       pdf.bounding_box [0,533], :width => 900, :height => 200 do
         pdf.text(
-          "#{name}'s Corporate Handbook", 
+          "#{name.upcase}", 
           :size => 32, 
+          :align => :center, 
+          :valign => :center
+        )
+        pdf.text(
+          "Company Handbook", 
+          :size => 22, 
           :align => :center, 
           :valign => :center
         )

@@ -61,7 +61,7 @@ class HandbooksController < ApplicationController
 
     respond_to do |format|
       if (captcha_unnecessary?(ip_address) || verify_recaptcha(:model => @handbook, :message => "Invalid captcha")) && @handbook.save
-        format.html { redirect_to(@handbook, :notice => 'Mission completed!') }
+        format.html { redirect_to(@handbook, :notice => 'Company handbook creation process initiated.') }
         format.xml  { render :xml => @handbook, :status => :created, :location => @handbook }
       else
         format.html { render :action => "new" }

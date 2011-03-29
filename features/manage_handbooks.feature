@@ -8,4 +8,4 @@ Feature: Manage handbooks
     And I fill in "Your email" with "nbartlomiej@gmail.com"
     And I fill in "Company name" with "Flower Power"
     When I press "Send me the .pdf"
-    Then I should see "We'll write you!"
+    Then I should see "Your personalized company handbook is almost ready."

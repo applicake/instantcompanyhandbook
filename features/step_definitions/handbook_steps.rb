@@ -9,6 +9,15 @@ When /^I delete the (\d+)(?:st|nd|rd|th) handbook$/ do |pos|
   end
 end
 
+When /^I create a handbook (\d+) times$/ do |number|
+  number.to_i.times do |index|
+    Given %{I am on the homepage}
+    And %{I fill in "Your email" with "nbartlomiej@gmail.com"}
+    And %{I fill in "Company name" with "Flower Power #{index}"}
+    When %{I press "Send me the .pdf"}
+  end
+end
+
 Then /^I should see the following handbooks:$/ do |expected_handbooks_table|
   expected_handbooks_table.diff!(tableish('table tr', 'td,th'))
 end

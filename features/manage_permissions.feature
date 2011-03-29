@@ -9,4 +9,5 @@ Feature: Manage permissions
 
   Scenario: Multiple form filling introduces captcha
     When I create a handbook 3 times
+    And I go to the home page
     Then I should see "Please prove you're human"

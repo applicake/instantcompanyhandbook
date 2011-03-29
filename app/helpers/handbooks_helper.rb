@@ -5,9 +5,9 @@ module HandbooksHelper
   # three handbooks in the following five hours
   def requires_captcha? ip_address
     Handbook.where(
-      :ip_address => '127.0.0.1', 
+      :ip_address => ip_address, 
       :created_at => 5.hours.ago ... Time.now
-    ).order('created_at DESC').count > 3
+    ).order('created_at DESC').count >= 3
   end
 
   # just some DSL (Domain Specific Language),

@@ -19,7 +19,7 @@ class Handbook < ActiveRecord::Base
   # via a background job using spawn.
   # (Let's hope it's okay;
   # if done other way,
-  # it might bring the whole server down)
+  # it might bring the whole server down) # just kidding
   #
   # https://github.com/tra/spawn
   def generate_pdf
@@ -28,7 +28,7 @@ class Handbook < ActiveRecord::Base
     spawn :nice => 5, :argv => "spawn #{id}" do
 
       pdf = Prawn::Document.new(
-        :page_size => [500, 1000],
+        :page_size => [733, 1000],
         :page_layout => :landscape,
         :left_margin => 0, 
         :right_margin => 0,
@@ -36,12 +36,35 @@ class Handbook < ActiveRecord::Base
         :bottom_margin => 0
       )
 
-      pdf.text "#{name}"
+      pdf.bounding_box [50,633], :width => 900, :height => 533 do
+        pdf.bounding_box [0,533], :width => 900, :height => 200 do
+          pdf.text(
+            "#{name}'s Corporate Handbook", 
+            :size => 32, 
+            :align => :center, 
+            :valign => :center
+          )
+        end
+        pdf.bounding_box [100,333], :width => 700, :height => 333 do
+          [ """
+          We crated this page because we observed a dangerous lack of structure in the corporate world, particularly in the fragile environment of startup ecosystem.
+          """, """
+          Startups ignore necessary bureaucracy, their values are only vaguely defined and, henceforth, they are not successful in executing them.
+          """, """
+          We believe following a set rudimentary rules it necessary to overcome the forthcoming challenges, maintain efforts to deliver top execution, ensure peak performance of the workforce, generate passion, involvement and achievement. Finally, maintain motivation to design and deliver market-leading products and solutions.
+          ""","""
+          And remember the meta-rule: \"Fake it until you make it!\"
+          """ ].each do |paragraph|
+            pdf.text paragraph, :align => :left, :size => 16
+          end
+        end
+      end
+
       Photo.all.sort_by {|p| p.order} .each do |photo|
         pdf.start_new_page
-        pdf.image "#{photo.data.path}", :at => [0, 500], :width => 1000, :height => 500
-        if logo
-            pdf.image logo.path, :position => :right, :vposition => :bottom
+        pdf.image "#{photo.data.path}", :at => [0, 733], :width => 1000, :height =>733 
+        if logo.exists?
+          pdf.image logo.path, :position => :right, :vposition => :bottom
         end
       end
 

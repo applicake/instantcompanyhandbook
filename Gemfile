@@ -60,3 +60,4 @@ gem 'ruby-debug' # for the debugger command
 gem 'uuidtools' # for generating uuids, see https://github.com/aduffeck/uuid_it
 
 gem 'fancy-buttons' # plugin for compass, pretty buttons
+gem 'delayed_job'

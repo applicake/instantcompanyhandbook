@@ -30,7 +30,10 @@ gem 'rails', '3.0.5'
 # end
 
 # gem "mysql"
-gem 'sqlite3-ruby', :require => 'sqlite3'
+
+group :development do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+end
 gem "rspec-rails", ">= 2.4.1", :group => [:development]
 gem "remarkable_activerecord", ">=4.0.0.alpha4", :group => :test
 gem "factory_girl_rails", "1.1.beta1", :group => :test
@@ -61,3 +64,10 @@ gem 'uuidtools' # for generating uuids, see https://github.com/aduffeck/uuid_it
 
 gem 'fancy-buttons' # plugin for compass, pretty buttons
 gem 'delayed_job'
+
+gem 'capistrano'
+gem 'capistrano-ext'
+
+group :production do
+  gem "mysql2"
+end

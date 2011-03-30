@@ -7,6 +7,7 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 
-# Creating an admin user
-User.create!({:email => "handbook@applicake.com", :password => "INSERT_PASSWORD_HERE", :password_confirmation => "INSERT_PASSWORD_HERE" })
-
+# Creating an admin user if the user database is empty
+if User.count == 0
+  User.create!({:email => "handbook@applicake.com", :password => "INSERT_PASSWORD_HERE", :password_confirmation => "INSERT_PASSWORD_HERE" })
+end

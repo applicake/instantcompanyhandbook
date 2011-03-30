@@ -1,22 +1,22 @@
 .content-header
-  %h1.headline Welcome to the 100% free, open source <br/> instant company handbook generator!
+  .generator-description= image_tag('intro.png')
+  .sample-button
+    -# todo: move these images to stylesheets, some of the work is already done
+    .s1= image_tag('sample_top.png', :width => 277, :height => 82)
+    .s2= link_to image_tag('sample_button.png', :width => 277, :height => 38), sample_handbooks_path
+    .s3= image_tag('sample_bottom.png', :width => 277, :height => 57)
+    %p.sample-desc A life-saving book created for the Applicake Ruby on Rails development shop.
   
 
 .description
-  %h2 What's it all about?
+  %h2 what's it all about?
   %p We created this page because we have observed a dangerous lack of structure in the corporate world, particularly in the fragile environment of the startup ecosystem.
   %p Startups tend to ignore necessary bureaucracy. Consequently, their values are only vaguely defined and, henceforth, they are not successful in executing them.
   %p We believe following a set of rudimentary rules is necessary to: overcome forthcoming challenges, maintain efforts to deliver top execution, ensure peak performance of the workforce, generate passion, involvement and achievement and finally, maintain motivation to design and deliver market-leading products and solutions.
-  .doc-icon
-    %h2 View a sample!
-    %p A life-saving book created for the Applicake Ruby on Rails development shop.
-    = link_to image_tag('freelance_icon.png'), sample_handbooks_path
-  .doc-description
-    = link_to 'Show me the sample', sample_handbooks_path
 
 .handbooks-panel
   .your-handbook
-    %h2 Want such pdf?
+    %h2 want such pdf?
     %p Ready to boost up your performance and take your company culture to the next level?
     %p Generate your personalized company handbook here by providing us with the following information:
     = render 'form'

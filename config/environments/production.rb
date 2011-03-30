@@ -47,22 +47,21 @@ CorporateHandbook::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  # required by devise
-  config.action_mailer.default_url_options = { :host => 'InstantCompanyHandbook.com' }
-
   # path to ImageMagick, for paperclip
   Paperclip.options[:command_path] = '/usr/bin/'
-
 
   # gmail account data, for sending mails
   config.action_mailer.smtp_settings = {  
     :address              => "smtp.gmail.com",  
     :port                 => 587,  
     :domain               => "applicake.com",  
-    :user_name            => "companyhandbook",  
+    :user_name            => "companyhandbook@applicake.com",  
     :password             => "INSERT_PASSWORD_HERE",  
     :authentication       => "plain",  
     :enable_starttls_auto => true  
   }  
+
+  # required by devise
+  config.action_mailer.default_url_options = { :host => 'applicake.com' }
 
 end

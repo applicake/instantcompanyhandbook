@@ -30,13 +30,12 @@ CorporateHandbook::Application.configure do
   config.action_mailer.smtp_settings = {  
     :address              => "smtp.gmail.com",  
     :port                 => 587,  
-    :domain               => "gmail.com",  
-    :user_name            => "devmaildelivery",  
-    :password             => "INSERT_PASSWORD_HERE#1",  
+    :domain               => "applicake.com",  
+    :user_name            => "companyhandbook@applicake.com",  
+    :password             => "INSERT_PASSWORD_HERE",  
     :authentication       => "plain",  
     :enable_starttls_auto => true  
   }  
-
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 

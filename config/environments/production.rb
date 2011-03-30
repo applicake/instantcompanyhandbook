@@ -60,7 +60,7 @@ CorporateHandbook::Application.configure do
     :port                 => 587,  
     :domain               => "applicake.com",  
     :user_name            => "companyhandbook",  
-    :password             => "55F62352",  
+    :password             => "INSERT_PASSWORD_HERE",  
     :authentication       => "plain",  
     :enable_starttls_auto => true  
   }  

@@ -23,12 +23,22 @@ CorporateHandbook::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
-  # Required by devise, setting the mailer's host
-  # commented out as we're not intending to send any mails!
-  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
   # path to ImageMagick, for paperclip
   Paperclip.options[:command_path] = '/usr/local/bin/'
+
+  # gmail account data, for sending mails
+  config.action_mailer.smtp_settings = {  
+    :address              => "smtp.gmail.com",  
+    :port                 => 587,  
+    :domain               => "gmail.com",  
+    :user_name            => "devmaildelivery",  
+    :password             => "INSERT_PASSWORD_HERE#1",  
+    :authentication       => "plain",  
+    :enable_starttls_auto => true  
+  }  
+
+  
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 end
 

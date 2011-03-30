@@ -47,9 +47,8 @@ CorporateHandbook::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  # Required by devise, setting the mailer's host
-  # commented out as we're not intending to send any mails!
-  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # required by devise
+  config.action_mailer.default_url_options = { :host => 'InstantCompanyHandbook.com' }
 
   # path to ImageMagick, for paperclip
   Paperclip.options[:command_path] = '/usr/bin/'

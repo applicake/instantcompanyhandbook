@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
 
-  attr_accessible :data, :order
+  attr_accessible :data, :order, :logo_overlay
 
   has_attached_file :data, :styles => {:large => '1000x733!', :thumbnail => '256x256#'}, :default_style => :large
 

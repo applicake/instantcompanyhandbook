@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110329084655) do
+ActiveRecord::Schema.define(:version => 20110331090541) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20110329084655) do
     t.string   "data_content_type"
     t.integer  "data_file_size"
     t.datetime "data_updated_at"
+    t.boolean  "logo_overlay"
   end
 
   create_table "users", :force => true do |t|

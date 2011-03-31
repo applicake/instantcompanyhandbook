@@ -3,13 +3,19 @@
 
     .field
       = f.label :your_email, :for => 'handbook_email'
+      .field-desc
+        We won't use it in any way other than to send you the pdf.
       = f.text_field :email, 'data-extracts_cname_to' => 'handbook_name'
     .field
       = f.label :company_name, :for => 'handbook_name'
+      .field-desc
+        We'll only use it to personalize the pdf for you.
       = f.text_field :name
     .field
       = f.label :logo
       (optional)
+      .field-desc
+        As above, we'll only use it to personalize the pdf for you.
       = f.file_field :logo
     - if requires_captcha? request.remote_ip
       .field.captcha
@@ -23,4 +29,4 @@
             %li= msg
 
     .actions
-      = f.submit 'Send me the .pdf', :class => 'generate'
+      = f.submit 'SEND ME MY COMPANY HANDBOOK!', :class => 'generate'

@@ -33,6 +33,7 @@
 @include font-face("League Script", font-files("LeagueScript.otf", opentype))
 @include font-face("Cursif", font-files("Cursif.ttf", truetype))
 
+$light-text: #777
 
 .user-panel
   text-align: right
@@ -111,7 +112,7 @@ h1, h2, h3, h4, h5, h6
       height: 57px
     .sample-desc
       padding: 0 10px
-      color: #666
+      color: $light-text
       text-align: center
 
 
@@ -146,6 +147,8 @@ h1, h2, h3, h4, h5, h6
         label
         input
           +column(10, last)
+        .field-desc
+          color: $light-text
       .field_with_errors
         +column(10, last)
         label
@@ -157,7 +160,11 @@ h1, h2, h3, h4, h5, h6
         +column(10, last)
         padding-top: 20px
         .generate
-          +fancy-button(#A1C820)
+          font-weight: normal
+          +fancy-button(#229DE1, 16px , 0px, 1px)
+          padding: 7px 0
+          border-color: #80c9f0
+          width: 400px
       #error_explanation
         margin: 18px 0
         +column(10,last)

@@ -21,6 +21,9 @@
 @import "compass/css3/text-shadow"
 @import "compass/css3/gradient"
 
+@import "compass/css3/transform"
+
+
 @import "compass/layout/sticky-footer"
 
 @import "fancy-buttons"
@@ -133,8 +136,11 @@ h1, h2, h3, h4, h5, h6
   .doc-description
     text-align: center
     +column(10, last)
+  .github-mention
+    color: $light-text
 
 .handbooks-panel
+  font-size: 14px
   +column(11, last)
   .your-handbook
     +column(10, last)
@@ -182,11 +188,15 @@ h1, h2, h3, h4, h5, h6
 @include sticky-footer(95px, "#container", "#container_footer", "#footer")
 
 #footer
+  height: 95px
+  .footer-wrapper
+    height: 95px
+    background: url("../../images/top_background.png") bottom repeat-x
+    clear: both
+    width: 100%
+    float: left
   // background: #8ED121
   // background: url("http://assets.applicake.com.s3.amazonaws.com/images/menu.bg3.jpg") bottom repeat-x
-  background: #f00
-  background: url("./../../images/menu_bg_4.png") bottom repeat-x
-  height: 95px
   .top-logo
     +column(7)
     margin-top: 18px
@@ -224,23 +234,35 @@ h1, h2, h3, h4, h5, h6
 
 .instructions
   font-size: 14px
-  +column(10, last)
-  +append(11)
+  +column(14, last)
+  +append(1)
+  text-align: justify
+  h2
+    text-align: left
+
+.sharing
+  +column(6, last)
+  +prepend(1)
   text-align: justify
 
-.spread
+.social
+  margin-top: 75px
   .twshare
+    float: left
     width: 120px
-    float: left
+    height: 50px
   .bzshare
-    width: 70px
     float: left
+    width: 105px
+    height: 50px
   .fbshare
-    width: 100px
     float: left
+    width: 120px
+    height: 50px
   .atshare
-    width: 70px
     float: left
+    width: 110px
+    height: 50px
 
 // useful lines
 //+linear-gradient(color-stops(white, #ddd))

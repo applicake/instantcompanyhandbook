@@ -5,14 +5,28 @@
     .s1= image_tag('sample_top.png', :width => 277, :height => 82)
     .s2= link_to image_tag('sample_button.png', :width => 277, :height => 38), sample_handbooks_path
     .s3= image_tag('sample_bottom.png', :width => 277, :height => 57)
-    %p.sample-desc A life-saving book created for the Applicake Ruby on Rails development shop.
+    .tcrl
+  -#  %p.sample-desc A life-saving book created for the Applicake Ruby on Rails development shop.
   
 
 .description
   %h2 what's it all about?
-  %p We created this page because we have observed a dangerous lack of structure in the corporate world, particularly in the fragile environment of the startup ecosystem.
-  %p Startups tend to ignore necessary bureaucracy. Consequently, their values are only vaguely defined and, henceforth, they are not successful in executing them.
-  %p We believe following a set of rudimentary rules is necessary to: overcome forthcoming challenges, maintain efforts to deliver top execution, ensure peak performance of the workforce, generate passion, involvement and achievement and finally, maintain motivation to design and deliver market-leading products and solutions.
+  %p 
+    We created this page because 
+    %strong we have observed a dangerous lack of structure in the corporate world,
+    particularly in the fragile environment of the startup ecosystem.
+  %p 
+    %strong Startups tend to ignore necessary bureaucracy. 
+    Consequently, their values are only vaguely defined and, henceforth, they are not successful in executing them.
+  %p 
+    We believe following 
+    %strong a set of rudimentary rules 
+    is necessary to: overcome forthcoming challenges, maintain efforts to deliver top execution, ensure peak performance of the workforce, generate passion, involvement and achievement and finally, maintain motivation to design and deliver market-leading products and solutions.
+
+  .github-mention
+    *) We'll be publishing all the fun stuff on our 
+    %a= link_to 'GitHub account', 'http://github.com/applicake'
+    next week
 
 .handbooks-panel
   .your-handbook

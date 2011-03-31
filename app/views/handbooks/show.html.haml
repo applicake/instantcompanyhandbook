@@ -1,25 +1,46 @@
-%h2 Yay! Your personalized company handbook is almost ready.
 .instructions
+  %h2 yay! your personalized company handbook is almost ready.
   %p 
-    We'll send your handbook to the email address you submitted. Because strategic planning and choosing the right corporate rules (not to mention assembling the pdf) take time, please give us approximately five minutes for delivery to your email inbox.  
+    We'll send your handbook to the email address you submitted. Because strategic planning and choosing the right corporate rules (not to mention assembling the pdf) take time, 
+    %strong please give us approximately five minutes for delivery to your email inbox
+    \.  
   %p
-    Note that because your email provider may associate company handbooks with unwanted spam... you should remember to check your Spam folder, too.
+    Note that because your email provider may associate company handbooks with unwanted spam... you should 
+    %strong remember to check your Spam folder, too
+    \.
   %p
     Did you accidentally make a typo in your email address? Worry not! You can always generate your own, free, open source, personalized company handbook #{link_to 'again', root_path }!
-  %h2 Liked it? Share it!
-  .spread 
-    .twshare 
+.sharing
+  %h2 liked it? share it!
+  .social
+    .twshare
       %a.twitter-share-button{"data-count" => "horizontal", "data-via" => "applicake", :href => "http://twitter.com/share", "data-url" => request.domain } Tweet 
       %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"} 
     .bzshare
       %a.google-buzz-button{'title'=>'Post to Google Buzz', 'href'=>'http://www.google.com/buzz/post', 'data-button-style'=>'link', 'data-url'=>request.domain}
       %script{ 'type'=>'text/javascript', 'src'=>'http://www.google.com/buzz/api/button.js' }
-    .fbshare 
+    .fbshare
       %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"} 
       %fb:like{:layout => "button_count", :href => request.domain, :show_faces => "false", :width => "120"}
     .atshare
       .addthis_toolbox.addthis_default_style
         %a.addthis_button_compact{:href => "http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d91aa9e34db11bc"} Share
       %script{:type => "text/javascript", :src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4d91aa9e34db11bc"}
-    .CLR 
 
+-#    %table
+-#      %tr
+-#        %td
+-#          %a.twitter-share-button{"data-count" => "horizontal", "data-via" => "applicake", :href => "http://twitter.com/share", "data-url" => request.domain } Tweet 
+-#          %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"} 
+-#        %td
+-#          %a.google-buzz-button{'title'=>'Post to Google Buzz', 'href'=>'http://www.google.com/buzz/post', 'data-button-style'=>'link', 'data-url'=>request.domain}
+-#          %script{ 'type'=>'text/javascript', 'src'=>'http://www.google.com/buzz/api/button.js' }
+-#      %tr
+-#        %td
+-#          %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"} 
+-#          %fb:like{:layout => "button_count", :href => request.domain, :show_faces => "false", :width => "120"}
+-#        %td
+-#          .addthis_toolbox.addthis_default_style
+-#            %a.addthis_button_compact{:href => "http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4d91aa9e34db11bc"} Share
+-#          %script{:type => "text/javascript", :src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4d91aa9e34db11bc"}
+-#

@@ -25,10 +25,11 @@
         = yield
       #container_footer
     .footer#footer
-      .container
-        .top-logo
-          =image_tag('applicake_shadow.png')
-        .menu-items
-          -applicake_menu
+      .footer-wrapper
+        .container
+          .top-logo
+            =link_to image_tag('applicake_shadow.png'), 'http://applicake.com'
+          .menu-items
+            -applicake_menu
           
     = javascript_include_tag :defaults

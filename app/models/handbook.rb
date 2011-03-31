@@ -71,7 +71,7 @@ class Handbook < ActiveRecord::Base
 
     p = "public/handbooks/#{id}"
     Dir.mkdir(p) unless File.directory?(p)
-    pdf.render_file "#{p}/corporate_handbook.pdf"
+    pdf.render_file "#{p}/Company_Handbook.pdf"
 
     HandbookMailer.availability_notification(self).deliver if email
 

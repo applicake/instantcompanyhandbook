@@ -3,7 +3,7 @@ class HandbookMailer < ActionMailer::Base
 
   def availability_notification(handbook)
     attachments["corporate_handbook.pdf"] = File.read("#{Rails.root}/public/handbooks/#{handbook.id}/corporate_handbook.pdf") 
-    mail(:to => handbook.email, :subject => "The brand new, personalized company handbook for #{handbook.name} is ready!")
+    mail(:to => handbook.email, :subject => "A brand new, personalized company handbook for #{handbook.name} is ready!")
   end
 
 end

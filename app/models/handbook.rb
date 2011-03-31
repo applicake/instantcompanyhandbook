@@ -25,33 +25,35 @@ class Handbook < ActiveRecord::Base
       :bottom_margin => 0
     )
 
+    # hack, putting in a hardcoded image; todo: fix!
+    pdf.image "#{Rails.public_path + '/images/front.jpg'}", :at => [0, 733], :width => 1000, :height =>733 
     pdf.bounding_box [50,633], :width => 900, :height => 533 do
       pdf.bounding_box [0,533], :width => 900, :height => 200 do
         pdf.text(
           "#{name.upcase}", 
-          :size => 32, 
+          :size => 48, 
           :align => :center, 
           :valign => :center
         )
-        pdf.text(
-          "Company Handbook", 
-          :size => 22, 
-          :align => :center, 
-          :valign => :center
-        )
-      end
-      pdf.bounding_box [100,333], :width => 700, :height => 333 do
-        [ """
-        We crated this page because we observed a dangerous lack of structure in the corporate world, particularly in the fragile environment of startup ecosystem.
-        """, """
-        Startups ignore necessary bureaucracy, their values are only vaguely defined and, henceforth, they are not successful in executing them.
-        """, """
-        We believe following a set rudimentary rules it necessary to overcome the forthcoming challenges, maintain efforts to deliver top execution, ensure peak performance of the workforce, generate passion, involvement and achievement. Finally, maintain motivation to design and deliver market-leading products and solutions.
-        ""","""
-        And remember the meta-rule: \"Fake it until you make it!\"
-        """ ].each do |paragraph|
-          pdf.text paragraph, :align => :left, :size => 16
-        end
+      #   pdf.text(
+      #     "Company Handbook", 
+      #     :size => 22, 
+      #     :align => :center, 
+      #     :valign => :center
+      #   )
+      # end
+      # pdf.bounding_box [100,333], :width => 700, :height => 333 do
+      #   [ """
+      #   We crated this page because we observed a dangerous lack of structure in the corporate world, particularly in the fragile environment of startup ecosystem.
+      #   """, """
+      #   Startups ignore necessary bureaucracy, their values are only vaguely defined and, henceforth, they are not successful in executing them.
+      #   """, """
+      #   We believe following a set rudimentary rules it necessary to overcome the forthcoming challenges, maintain efforts to deliver top execution, ensure peak performance of the workforce, generate passion, involvement and achievement. Finally, maintain motivation to design and deliver market-leading products and solutions.
+      #   ""","""
+      #   And remember the meta-rule: \"Fake it until you make it!\"
+      #   """ ].each do |paragraph|
+      #     pdf.text paragraph, :align => :left, :size => 16
+      #   end
       end
     end
 
@@ -71,7 +73,7 @@ class Handbook < ActiveRecord::Base
     Dir.mkdir(p) unless File.directory?(p)
     pdf.render_file "#{p}/corporate_handbook.pdf"
 
-    #HandbookMailer.availability_notification(self).deliver if email
+    HandbookMailer.availability_notification(self).deliver if email
 
   end
   handle_asynchronously :generate_pdf

@@ -4,6 +4,8 @@
 
 .photos
   -@photos.each do |photo|
-    .photo
-      =image_tag photo.data(:large)
+    -if photo.logo_overlay
+      .photo=image_tag photo.data(:tcrl)
+    -else
+      .photo=image_tag photo.data(:large)
 

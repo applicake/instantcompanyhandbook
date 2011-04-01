@@ -37,25 +37,6 @@ class Handbook < ActiveRecord::Base
           :align => :center, 
           :valign => :center
         )
-      #   pdf.text(
-      #     "Company Handbook", 
-      #     :size => 22, 
-      #     :align => :center, 
-      #     :valign => :center
-      #   )
-      # end
-      # pdf.bounding_box [100,333], :width => 700, :height => 333 do
-      #   [ """
-      #   We crated this page because we observed a dangerous lack of structure in the corporate world, particularly in the fragile environment of startup ecosystem.
-      #   """, """
-      #   Startups ignore necessary bureaucracy, their values are only vaguely defined and, henceforth, they are not successful in executing them.
-      #   """, """
-      #   We believe following a set rudimentary rules it necessary to overcome the forthcoming challenges, maintain efforts to deliver top execution, ensure peak performance of the workforce, generate passion, involvement and achievement. Finally, maintain motivation to design and deliver market-leading products and solutions.
-      #   ""","""
-      #   And remember the meta-rule: \"Fake it until you make it!\"
-      #   """ ].each do |paragraph|
-      #     pdf.text paragraph, :align => :left, :size => 16
-      #   end
       end
     end
 

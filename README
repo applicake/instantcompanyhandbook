@@ -1,4 +1,17 @@
+INSTANT COMPANY HANDBOOK
+
+This site facilitates generation of personalized company handbooks. User may provide the company name, logo and an email address and to receive a company handbook. The handbook will be sent via mail as a PDF attachment; it consists of photos, some of them will have a user's logo overlaid on them.
+
+
 SOME IMPORTANT THINGS
 
 1. This project uses Paperclip with scaling and this has some requirements. Namely: A. ImageMagick has to be installed on server B. Paperclip must know the ImageMagick's path, to be set at the environment script (./config/environments)
+
 2. prawn is used for creating pdfs. Some background things affect the time of pdf generation: A. Prawn should not resize images, it should get them resized from Paperclip. B. Images should not have an alpha channel.
+
+3. The project has some hardcoded values:
+  a. the preview handbook has a sample logo (overlaid), kept in the public/images category, not referenced anywhere in the database
+  b. the pdfs are sent from a hardcoded email address (defined in config/environments/ files
+  c. the title page of a pdf document has a hardcoded background, taken from an image (kept in public/images), for details see the pdf creation method (search for yourself, last seen in ./app/models/handbook.rb)
+
+4. The project uses Delayed Job queuing; therefore a queue worker has to be started (if these jobs are to be done). Do this with rake jobs:work (done via capistrano on a production server)

@@ -25,6 +25,8 @@ class Handbook < ActiveRecord::Base
       :bottom_margin => 0
     )
 
+    pdf.font "#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
+
     # hack, putting in a hardcoded image; todo: fix!
     pdf.image "#{Rails.public_path + '/images/front.jpg'}", :at => [0, 733], :width => 1000, :height =>733 
     pdf.bounding_box [50,633], :width => 900, :height => 533 do

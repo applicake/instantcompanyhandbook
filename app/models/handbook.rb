@@ -4,7 +4,7 @@ class Handbook < ActiveRecord::Base
   after_commit :generate_pdf
 
   attr_accessible :name, :logo, :email
-  has_attached_file :logo	, :styles => {:pdf_corner => '200x150'}, :default_style => :pdf_corner
+  has_attached_file :logo	, :styles => {:pdf_corner => [ '200x150', :png] }, :default_style => :pdf_corner
 
   validates :email, :presence => true, :email => true
   validates :name, :presence => true

@@ -22,3 +22,6 @@ public/handbooks/*
 
 # smtp server authentication data
 config/smtp.yml
+
+# recaptcha keys
+config/recaptcha.yml

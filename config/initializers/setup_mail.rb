@@ -27,8 +27,6 @@
 #   authentication: plain  
 #   enable_starttls_auto: true  
 
-# ActionMailer::Base.smtp_settings = YAML.load_file("#{Rails.root}/config/smtp.yml")[Rails.env]
-
 CorporateHandbook::Application.configure do
   config.action_mailer.smtp_settings = YAML.load_file("#{Rails.root}/config/smtp.yml")[Rails.env].symbolize_keys
 end

@@ -7,6 +7,10 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 
+
+# loading admin credentials from the config/passwords.yml file
+administrator = YAML.load_file("#{Rails.root}/config/passwords.yml")['administrator'].symbolize_keys
+
 # dumping the user database and creating a single admin user
 User.delete_all
-User.create!({:email => "companyhandbook@applicake.com", :password => "INSERT_PASSWORD_HERE", :password_confirmation => "INSERT_PASSWORD_HERE" })
+User.create!(administrator)

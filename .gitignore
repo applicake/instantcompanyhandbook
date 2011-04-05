@@ -25,3 +25,5 @@ config/smtp.yml
 
 # passwords, recaptcha keys, etc
 config/passwords.yml
+
+*.swo

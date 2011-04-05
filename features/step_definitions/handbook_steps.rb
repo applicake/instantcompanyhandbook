@@ -14,7 +14,7 @@ When /^I create a handbook (\d+) times$/ do |number|
     Given %{I am on the homepage}
     And %{I fill in "Your email" with "nbartlomiej@gmail.com"}
     And %{I fill in "Company name" with "Flower Power #{index}"}
-    When %{I press "Send me the .pdf"}
+    When %{I press "SEND ME MY COMPANY HANDBOOK!"}
   end
 end
 

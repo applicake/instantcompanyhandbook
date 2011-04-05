@@ -11,7 +11,8 @@ SOME IMPORTANT THINGS
 
 3. The project has some hardcoded values:
   a. the preview handbook has a sample logo (overlaid), kept in the public/images category, not referenced anywhere in the database
-  b. the pdfs are sent from a hardcoded email address (defined in config/environments/ files
+  b. the pdfs are sent from a hardcoded email address, should be specified in ./config/smtp.yml (see smtp.yml.example)
+  c. admin account and analytics / recaptcha account IDs should be specified in ./config/passwords.yml (see passwords.yml.example)
   c. the title page of a pdf document has a hardcoded background, taken from an image (kept in public/images), for details see the pdf creation method (search for yourself, last seen in ./app/models/handbook.rb)
 
 4. The project uses Delayed Job queuing; therefore a queue worker has to be started (if these jobs are to be done). Do this with rake jobs:work (done via capistrano on a production server)

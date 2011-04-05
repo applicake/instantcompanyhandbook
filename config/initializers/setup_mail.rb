@@ -28,5 +28,6 @@
 #   enable_starttls_auto: true  
 
 CorporateHandbook::Application.configure do
-  config.action_mailer.smtp_settings = YAML.load_file("#{Rails.root}/config/smtp.yml")[Rails.env].symbolize_keys
+  env_smtp = YAML.load_file("#{Rails.root}/config/smtp.yml")[Rails.env]
+  config.action_mailer.smtp_settings = env_smtp.symbolize_keys if env_smtp
 end

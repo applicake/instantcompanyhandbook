@@ -26,4 +26,9 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # using custom controller macros
+  RSpec.configure do |config|
+    config.extend ControllerMacros, :type => :controller
+  end
 end

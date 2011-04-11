@@ -27,3 +27,10 @@ config/smtp.yml
 config/passwords.yml
 
 *.swo
+
+# deploy scripts
+config/deploy.rb
+config/deploy/*
+
+# mac temp files
+.DS_Store

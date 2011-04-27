@@ -68,6 +68,4 @@ gem 'delayed_job'
 gem 'capistrano'
 gem 'capistrano-ext'
 
-group :production do
-  gem "mysql2"
-end
+gem "mysql2"

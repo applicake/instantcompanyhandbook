@@ -1,7 +1,6 @@
-GEM
-  remote: http://rubygems.org/
+PATH
+  remote: vendor/rails
   specs:
-    abstract (1.0.0)
     actionmailer (3.0.20)
       actionpack (= 3.0.20)
       mail (~> 2.2.19)
@@ -28,6 +27,25 @@ GEM
       activemodel (= 3.0.20)
       activesupport (= 3.0.20)
     activesupport (3.0.20)
+    rails (3.0.20)
+      actionmailer (= 3.0.20)
+      actionpack (= 3.0.20)
+      activerecord (= 3.0.20)
+      activeresource (= 3.0.20)
+      activesupport (= 3.0.20)
+      bundler (~> 1.0)
+      railties (= 3.0.20)
+    railties (3.0.20)
+      actionpack (= 3.0.20)
+      activesupport (= 3.0.20)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (~> 0.14.4)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    abstract (1.0.0)
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
@@ -103,7 +121,7 @@ GEM
     jquery-rails (0.2.7)
       rails (~> 3.0)
       thor (~> 0.14.4)
-    json (1.7.6)
+    json (1.7.7)
     json_pure (1.5.1)
     launchy (0.4.0)
       configuration (>= 0.0.5)
@@ -143,22 +161,8 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
-    rails (3.0.20)
-      actionmailer (= 3.0.20)
-      actionpack (= 3.0.20)
-      activerecord (= 3.0.20)
-      activeresource (= 3.0.20)
-      activesupport (= 3.0.20)
-      bundler (~> 1.0)
-      railties (= 3.0.20)
-    railties (3.0.20)
-      actionpack (= 3.0.20)
-      activesupport (= 3.0.20)
-      rake (>= 0.8.7)
-      rdoc (~> 3.4)
-      thor (~> 0.14.4)
     rake (10.0.3)
-    rdoc (3.12)
+    rdoc (3.12.1)
       json (~> 1.4)
     remarkable (4.0.0.alpha4)
       rspec (>= 2.0.0.alpha11)
@@ -230,7 +234,7 @@ DEPENDENCIES
   paperclip
   prawn
   prawnto
-  rails (= 3.0.20)
+  rails!
   remarkable_activerecord (>= 4.0.0.alpha4)
   rspec-rails (>= 2.4.1)
   ruby-debug
